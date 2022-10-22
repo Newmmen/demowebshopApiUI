@@ -14,6 +14,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.restassured.RestAssured.given;
 
+
 public class ApiMethods extends TestBase {
     String requestVerificationTokenName = "__RequestVerificationToken",
             authCookieName = "NOPCOMMERCE.AUTH";
