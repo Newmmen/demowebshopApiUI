@@ -3,12 +3,13 @@ package com.tricentis.demowebshop.tests;
 import com.tricentis.demowebshop.tests.apimethods.ApiActionsMethods;
 import com.tricentis.demowebshop.tests.testbase.TestBase;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ApiTest extends TestBase {
 
     ApiActionsMethods apiActionsMethods = new ApiActionsMethods();
-
+    @Tag("demowebshop")
     @DisplayName("Checking new user register")
     @Test
     public void checkUserRegister() {
@@ -16,7 +17,7 @@ public class ApiTest extends TestBase {
         apiActionsMethods.checklogin();
 
     }
-
+    @Tag("demowebshop")
     @DisplayName("Edit registered user data")
     @Test
     public void editUserData() {
