@@ -1,23 +1,26 @@
-package com.tricentis.demowebshop.tests.apimethods;
+package com.tricentis.demowebshop.tests.pages;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.WebDriverRunner;
-import com.tricentis.demowebshop.tests.testbase.TestBase;
+import com.tricentis.demowebshop.tests.TestBase;
+import com.tricentis.demowebshop.tests.models.PojoResponseCart;
 import com.tricentis.demowebshop.tests.testdata.TestData;
+import io.qameta.allure.Step;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.openqa.selenium.Cookie;
+import org.checkerframework.checker.units.qual.C;
 
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.restassured.RestAssured.given;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 
 public class ApiMethods extends TestBase {
-    String requestVerificationTokenName = "__RequestVerificationToken",
-            authCookieName = "NOPCOMMERCE.AUTH";
+    String requestVerificationTokenName = "__RequestVerificationToken";
+    PojoResponseCart responseCart = new PojoResponseCart();
+    MainPage mainPage = new MainPage();
+
 
 
     public Response registerUser(TestData userData, Map<String, String> cookies, String authToken) {
@@ -42,24 +45,25 @@ public class ApiMethods extends TestBase {
 
     }
 
-    public void checklogin(TestData userData, String authCookie) {
-        open("/Themes/DefaultClean/Content/images/logo.png");
-        Cookie cookie = new Cookie(authCookieName, authCookie);
-        WebDriverRunner.getWebDriver().manage().addCookie(cookie);
-        open("");
-        $(".account").shouldHave(Condition.text(userData.email));
+    public void addToCartTest(String userToken, String userAuthToken) {
+         responseCart =  given()
+                .log().all()
+                .contentType(ContentType.JSON)
+                .cookie("Nop.customer", userToken)
+                .cookie("NOPCOMMERCE.AUTH", userAuthToken)
+                .when()
+                .post("https://demowebshop.tricentis.com/addproducttocart/catalog/31/1/1")
+                .then()
+                .log().status()
+                .log().body()
+                .statusCode(200)
+                .extract()
+                .as(PojoResponseCart.class);
+
+         assertThat(responseCart.getUpdatetopcartsectionhtml()).isEqualTo(mainPage.getCardQty());
+
+
     }
-
-    public void editUserInfo(TestData userData) {
-        $(".account").click();
-        $(".page-body #FirstName").setValue(userData.firstName);
-        $(".page-body #LastName").setValue(userData.lastName);
-        $(".page-body #Email").setValue(userData.email);
-        $(".buttons [name='save-info-button']").click();
-        $(".account").shouldHave(Condition.text(userData.email));
-
-    }
-
 
     public Response register() {
         return given()
@@ -72,4 +76,6 @@ public class ApiMethods extends TestBase {
                 .extract()
                 .response();
     }
+
+
 }

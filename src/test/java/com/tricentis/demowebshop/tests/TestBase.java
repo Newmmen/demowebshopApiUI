@@ -1,7 +1,8 @@
-package com.tricentis.demowebshop.tests.testbase;
+package com.tricentis.demowebshop.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import com.tricentis.demowebshop.tests.attach.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterEach;

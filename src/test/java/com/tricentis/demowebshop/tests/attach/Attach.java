@@ -1,4 +1,4 @@
-package com.tricentis.demowebshop.tests.testbase;
+package com.tricentis.demowebshop.tests.attach;
 
 public class Attach extends WebHelper {
     public static void addAttachments() {
