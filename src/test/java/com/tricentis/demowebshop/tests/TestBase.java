@@ -2,7 +2,7 @@ package com.tricentis.demowebshop.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.tricentis.demowebshop.tests.attach.Attach;
+import com.tricentis.demowebshop.attach.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterEach;
@@ -17,7 +17,6 @@ public class TestBase {
     public void configure() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.baseUrl = "https://demowebshop.tricentis.com/";
-        RestAssured.baseURI = "https://demowebshop.tricentis.com/";
 
         Configuration.browserCapabilities = capabilities;
         if (System.getProperty("selenide.remote") != null) {

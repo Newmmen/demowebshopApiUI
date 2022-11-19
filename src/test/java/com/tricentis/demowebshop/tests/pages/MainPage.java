@@ -8,22 +8,14 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class MainPage {
 
-    public void openLoginPage(){
+
+    public MainPage openLoginPage(){
         open("");
-        $("[href='login']").click();
+        $("[href='/login']").click();
+        return this;
     }
 
-    @Step("Login validation for existing user")
-    public void loginExistingUser(){
-        $("#Email").setValue("");
-        $("#Password").setValue("");
-        $("[value='Log in']").click();
 
-    }
-    @Step("Login validation for existing user")
-    public void checkSuccessLogin(String existUserEmail){
-        $(".account").shouldHave(Condition.text(existUserEmail));
-    }
 
     public String getCardQty(){
         $("[class='cart-qty']").click();

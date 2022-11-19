@@ -1,4 +1,4 @@
-package com.tricentis.demowebshop.tests.pages;
+package com.tricentis.demowebshop.steps;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.WebDriverRunner;

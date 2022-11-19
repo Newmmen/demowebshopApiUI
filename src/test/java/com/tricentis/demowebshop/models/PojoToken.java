@@ -1,4 +1,4 @@
-package com.tricentis.demowebshop.tests.models;
+package com.tricentis.demowebshop.models;
 
 import lombok.Data;
 
