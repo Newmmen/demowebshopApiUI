@@ -10,14 +10,6 @@ public class TestData {
             lastName = faker.name().lastName(),
             email = faker.internet().emailAddress(),
             password = faker.internet().password();
-    private String authTokenName;
 
-    public void setAuthTokenName(String authTokenName) {
-        this.authTokenName = authTokenName;
-    }
-
-    public String getAuthTokenName() {
-        return authTokenName;
-    }
 }
 
