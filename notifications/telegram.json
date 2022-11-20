@@ -1,0 +1,16 @@
+{
+  "base": {
+    "project": "",
+    "environment": "Selenoid",
+    "comment": "demowebshop.com",
+    "reportLink": "",
+    "language": "en",
+    "allureFolder": "allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "5714839259:AAFM-4qCOrzwdeqJHA4zYF24x1YOzEc-ZFY",
+    "chat": "-1001816224850",
+    "replyTo": ""
+  }
+}

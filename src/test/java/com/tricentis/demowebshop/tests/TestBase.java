@@ -1,10 +1,10 @@
 package com.tricentis.demowebshop.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.tricentis.demowebshop.attach.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
-import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -27,8 +27,9 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
 
     }
+
     @AfterEach
-    public void addAttachment(){
+    public void addAttachment() {
         attach.addAttachments();
     }
 

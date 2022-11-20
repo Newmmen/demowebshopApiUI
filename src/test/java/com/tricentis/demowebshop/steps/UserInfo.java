@@ -9,12 +9,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class UserInfo {
-    final String authCookieName = "NOPCOMMERCE.AUTH";
-
 
     public void checklogin(TestData userData, String authCookie) {
         open("/Themes/DefaultClean/Content/images/logo.png");
-        Cookie cookie = new Cookie(authCookieName, authCookie);
+        Cookie cookie = new Cookie("NOPCOMMERCE.AUTH", authCookie);
         WebDriverRunner.getWebDriver().manage().addCookie(cookie);
         open("");
         $(".account").shouldHave(Condition.text(userData.email));

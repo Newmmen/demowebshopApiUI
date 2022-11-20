@@ -17,7 +17,6 @@ public class Api extends TestBase {
     MainPage mainPage = new MainPage();
 
 
-
     public Response registerUser(TestData userData, Map<String, String> cookies, String authToken) {
         return given()
                 .spec(registerUserRequest)
@@ -38,11 +37,10 @@ public class Api extends TestBase {
 
     }
 
-    public void addToCartTest(String userToken, String userAuthToken) {
-         String productQuantity =  given()
+    public void addToCartTest(Map<String, String> cookies) {
+        String productQuantity = given()
                 .spec(apiAddProductRequest)
-                .cookie("Nop.customer", userToken)
-                .cookie("NOPCOMMERCE.AUTH", userAuthToken)
+                .cookies(cookies)
                 .when()
                 .post("/31/1/1")
                 .then()
@@ -50,7 +48,7 @@ public class Api extends TestBase {
                 .extract()
                 .path("updatetopcartsectionhtml");
 
-         assertThat(productQuantity).isEqualTo(mainPage.getCardQty());
+        assertThat(productQuantity).isEqualTo(mainPage.getCardQty());
 
 
     }
@@ -65,6 +63,5 @@ public class Api extends TestBase {
                 .extract()
                 .response();
     }
-
 
 }

@@ -42,6 +42,7 @@ public class ApiSpecs {
             .log(LogDetail.STATUS)
             .log(LogDetail.BODY)
             .build();
+
     public static ResponseSpecification registerUserResponse = new ResponseSpecBuilder()
             .expectStatusCode(302)
             .log(LogDetail.STATUS)
