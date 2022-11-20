@@ -13,7 +13,7 @@
 
 ## :tshirt: Covered functionality
 
-> Autotests developed <code>API</code>.
+> Autotests developed <code>WEB + API</code>.
 
 ### Web + API
 
@@ -42,7 +42,7 @@
 <img width="6%" title="Jenkins" src="images/logo/Jenkins.svg">
 <img width="6%" title="Selenoid" src="images/logo/Selenoid.svg">
 <img width="6%" title="Allure TestOps" src="images/logo/Allure_TO.svg">
-<img width="6%" title="Telegram API" src="images/logo/Telegram.svg.svg">
+<img width="6%" title="Telegram API" src="images/logo/Telegram.svg">
 </p>
 
 In this project, autotests are written in <code>Java</code> with <code>Selenide</code> and <code>Rest Assured</code> for API tests.
@@ -68,34 +68,64 @@ In this project, autotests are written in <code>Java</code> with <code>Selenide<
 ### :desktop_computer: Running Tests Locally
 
 ```
-gradle clean test
+gradle clean all_test - run positive and negative tests
+gradle clean positive_test - run  only positive tests
+gradle clean negative_test - run  only negative tests
+
 ```
 
 ### :desktop_computer: Remote test running
 
 ```
-clean test
+clean
+${TASK}
+-Dselenide.remote= remote Selenoid server address
+-Dbrowser_size=${BROWSER_SIZE}
+-Dbrowser_name=${BROWSER_NAME}
+-Dbrowser_version=${BROWSER_VERSION}
 ```
-### :desktop_computer: Add file <code>data.properties</code> with data below
+### :desktop_computer: Add file <code>credentials.properties</code> with data below
 ```
-user.email=eve.holt@reqres.in
-user.undefined.email=sample@mail.ru
-user.undefined.password=1234
-user.first.name=Janet
-user.job=QA
-user.lastname=Weaver
-user.password=pistol
-token=QpwL5tke4Pnpja7X4
+user.email=brian.legros@gmail.com
+user.password=o6sypb4s55y
+sample.email=sample@gmail.com
+sample.password=45631
+
+deliver.country=United States
+deliver.city=Minsk
+deliver.state=Alaska
+deliver.zip=2353456
+deliver.address=Alaska Lenin st 12 b.5
+deliver.phone=486555
+
 
 ```
 ### :scroll: Main page of <code>Allure-report</code>
 
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/screens/AllureMain.PNG">
+<img title="Allure Overview Dashboard" src="images/screens/allureMain.png">
 </p>
 
 ### :scroll: Suites page of <code>Allure-report</code>
 
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/screens/AllureSuites.PNG">
+<img title="Allure Overview Dashboard" src="images/screens/allure.PNG">
+</p>
+
+### :scroll: Main page of <code>Allure TestOps</code>
+
+<p align="center">
+<img title="Allure Overview Dashboard" src="images/screens/allure-to.PNG">
+</p>
+
+### :scroll: Dashboard page of <code>Allure TestOps</code>
+
+<p align="center">
+<img title="Allure Overview Dashboard" src="images/screens/allure_to_dashboard.PNG">
+</p>
+
+### :scroll: <code>Jira</code> issue with linked test-cases and launches
+
+<p align="center">
+<img title="Allure Overview Dashboard" src="images/screens/Jira.PNG">
 </p>
