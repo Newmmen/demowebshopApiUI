@@ -10,6 +10,20 @@
 > ➠ [Running tests from the terminal](#Running-tests-from-the-terminal)
 >
 > ➠ [Test results report in Allure Report](#scroll-main-page-of-allure-report)
+> 
+> ➠ [Tests suits in Allure Report](#scroll-main-page-of-allure-report)
+> 
+> ➠ [Test-run report in Allure Test Ops](#scroll-main-page-of-allure-report)
+> 
+> ➠ [Dashboard page of Allure Test Ops](#scroll-main-page-of-allure-report)
+> 
+> ➠ [Test results report in Allure Report](#scroll-main-page-of-allure-report)
+> 
+> ➠ [Telegram notification bot](#scroll-main-page-of-allure-report)
+> 
+> ➠ [Jira integration with Allure Test Ops](#scroll-main-page-of-allure-report)
+> 
+> ➠ [An example of running a test in Selenoid](#scroll-main-page-of-allure-report)
 
 ## :tshirt: Covered functionality
 
@@ -43,6 +57,7 @@
 <img width="6%" title="Selenoid" src="images/logo/Selenoid.svg">
 <img width="6%" title="Allure TestOps" src="images/logo/Allure_TO.svg">
 <img width="6%" title="Telegram API" src="images/logo/Telegram.svg">
+<img width="6%" title="Jira" src="images/logo/jira-seeklogo.com.svg">
 </p>
 
 In this project, autotests are written in <code>Java</code> with <code>Selenide</code> and <code>Rest Assured</code> for API tests.
@@ -115,13 +130,36 @@ deliver.phone=486555
 ### <img width="4%" title="Allure TestOps" src="images/logo/Allure_TO.svg"> Main page of <code>Allure TestOps</code>
 
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/screens/allure-to.PNG">
+<img title="Allure Overview Dashboard" src="images/screens/allure_to_dashboard.PNG">
 </p>
 
-## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> An example of running a test in <code>Selenoid.svg</code>
+### <img width="4%" title="Allure TestOps" src="images/logo/Telegram.svg"> Dashboard page of <code>Allure TestOps</code>
+
+<p align="center">
+<img title="Allure TestOps" src="images/screens/allure_to_dashboard.PNG">
+</p>
+
+
+### <img width="4%" title="Telegram" src="images/logo/Telegram.svg">Notification <code>Telegram</code> bot
+
+>After each launch telegram bot send tests report and allure report link.
+
+<p align="center">
+<img title="Telegram notification" src="images/screens/telegram.PNG">
+</p>
+
+### <img width="4%" title="Telegram" src="images/logo/jira-seeklogo.com.svg"> <code>Jira</code> integration with <code>Allure TestOps</code>
+
+> Jira issue with linked test-cases and Allure Test Ops launches
+
+<p align="center">
+<img title="Jira" src="images/screens/Jira.PNG">
+</p>
+
+### <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> An example of running a test in <code>Selenoid</code>
 
 >A video is attached to each test in the report. One of these videos is shown below.
 
 <p align="center">
-  <img title="Selenoid.svg Video" src="images/gifs/Selenoid.gif">
+  <img title="Selenoid Video" src="images/gifs/Selenoid.gif">
 </p>
