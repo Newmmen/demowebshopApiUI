@@ -83,7 +83,7 @@ task positive_tests(type: Test) {
     }
 }
 
-task negative_tests(type: Test) {
+task (type: Test) {
     useJUnitPlatform {
         includeTags "Negative"
     }
