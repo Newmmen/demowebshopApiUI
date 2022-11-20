@@ -1,7 +1,6 @@
 package com.tricentis.demowebshop.tests;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.tricentis.demowebshop.attach.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
