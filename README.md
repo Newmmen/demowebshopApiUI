@@ -100,32 +100,28 @@ deliver.phone=486555
 
 
 ```
-### :scroll: Main page of <code>Allure-report</code>
+### <img width="4%" title="Allure" src="images/logo/Allure_Report.svg"> Main page of <code>Allure-report</code>
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="images/screens/allureMain.png">
 </p>
 
-### :scroll: Suites page of <code>Allure-report</code>
+### <img width="4%" title="Allure" src="images/logo/Allure_Report.svg"> Suites page of <code>Allure-report</code>
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="images/screens/allure.PNG">
 </p>
 
-### :scroll: Main page of <code>Allure TestOps</code>
+### <img width="4%" title="Allure TestOps" src="images/logo/Allure_TO.svg"> Main page of <code>Allure TestOps</code>
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="images/screens/allure-to.PNG">
 </p>
 
-### :scroll: Dashboard page of <code>Allure TestOps</code>
+## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> An example of running a test in <code>Selenoid.svg</code>
+
+>A video is attached to each test in the report. One of these videos is shown below.
 
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/screens/allure_to_dashboard.PNG">
-</p>
-
-### :scroll: <code>Jira</code> issue with linked test-cases and launches
-
-<p align="center">
-<img title="Allure Overview Dashboard" src="images/screens/Jira.PNG">
+  <img title="Selenoid.svg Video" src="images/gifs/Selenoid.gif">
 </p>
