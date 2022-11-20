@@ -9,21 +9,19 @@
 >
 > ➠ [Running tests from the terminal](#Running-tests-from-the-terminal)
 >
-> ➠ [Test results report in Allure Report](#scroll-main-page-of-allure-report)
+> ➠ [Test results report in Allure Report](#-main-page-of-allure-report)
 > 
-> ➠ [Tests suits in Allure Report](#scroll-main-page-of-allure-report)
+> ➠ [Tests suits in Allure Report](#-suites-page-of-allure-report)
 > 
-> ➠ [Test-run report in Allure Test Ops](#scroll-main-page-of-allure-report)
+> ➠ [Test-run report in Allure Test Ops](#-main-page-of-allure-testops)
 > 
-> ➠ [Dashboard page of Allure Test Ops](#scroll-main-page-of-allure-report)
+> ➠ [Dashboard page of Allure Test Ops](#-dashboard-page-of-allure-testops)
 > 
-> ➠ [Test results report in Allure Report](#scroll-main-page-of-allure-report)
+> ➠ [Telegram notification bot](#-notification-telegram-bot)
 > 
-> ➠ [Telegram notification bot](#scroll-main-page-of-allure-report)
+> ➠ [Jira integration with Allure Test Ops](#-jira-integration-with-allure-testops)
 > 
-> ➠ [Jira integration with Allure Test Ops](#scroll-main-page-of-allure-report)
-> 
-> ➠ [An example of running a test in Selenoid](#scroll-main-page-of-allure-report)
+> ➠ [An example of running a test in Selenoid](#-an-example-of-running-a-test-in-selenoid)
 
 ## :tshirt: Covered functionality
 
