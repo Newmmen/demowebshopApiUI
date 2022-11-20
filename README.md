@@ -17,7 +17,7 @@
 > 
 > ➠ [Dashboard page of Allure Test Ops](#-dashboard-page-of-allure-testops)
 > 
-> ➠ [Telegram notification bot](#-notification-telegram-bot)
+> ➠ [Telegram notification bot](#notification-telegram-bot)
 > 
 > ➠ [Jira integration with Allure Test Ops](#-jira-integration-with-allure-testops)
 > 
