@@ -133,7 +133,7 @@ deliver.phone=486555
 <img title="Allure Overview Dashboard" src="images/screens/allure_to_dashboard.PNG">
 </p>
 
-### <img width="4%" title="Allure TestOps" src="images/logo/Telegram.svg"> Dashboard page of <code>Allure TestOps</code>
+### <img width="4%" title="Allure TestOps" src="images/logo/Allure_TO.svg"> Dashboard page of <code>Allure TestOps</code>
 
 <p align="center">
 <img title="Allure TestOps" src="images/screens/allure_to_dashboard.PNG">
