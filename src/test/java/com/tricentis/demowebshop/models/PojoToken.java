@@ -2,10 +2,11 @@ package com.tricentis.demowebshop.models;
 
 import lombok.Data;
 
+import java.util.Map;
+
 @Data
 
 public class PojoToken {
-    private String authToken;
-    private String userToken;
+    private Map<String, String> cookies;
 
 }

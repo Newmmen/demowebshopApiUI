@@ -11,7 +11,13 @@ repositories {
 
 def allureVersion = "2.17.3",
     selenideVersion = "6.5.0",
-    junitVersion = "5.8.2"
+    junitVersion = "5.8.2",
+    aspectjVersion = "1.9.6",
+    restAssuredVersion = "4.3.1",
+    ownerVersion = "1.0.12",
+    assertjVersion = "3.19.0",
+    slf4jjVersion = "1.7.29",
+    fakerVersion = "1.0.2"
 
 allure {
     report {
@@ -30,15 +36,15 @@ allure {
 dependencies {
     testImplementation(
 
-            "org.aspectj:aspectjweaver:1.9.6",
+            "org.aspectj:aspectjweaver:$aspectjVersion",
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
-            "io.rest-assured:rest-assured:4.3.1",
+            "io.rest-assured:rest-assured:$restAssuredVersion",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
-            "org.aeonbits.owner:owner:1.0.12",
-            "org.assertj:assertj-core:3.19.0",
-            "org.slf4j:slf4j-simple:1.7.29",
-            'com.github.javafaker:javafaker:1.0.2',
+            "org.aeonbits.owner:owner:$ownerVersion",
+            "org.assertj:assertj-core:$assertjVersion",
+            "org.slf4j:slf4j-simple:$slf4jjVersion",
+            "com.github.javafaker:javafaker:$fakerVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion")
 }
 
@@ -71,8 +77,19 @@ tasks.withType(Test) {
     }
 }
 
-task demowebshop(type: Test) {
+task positive_tests(type: Test) {
     useJUnitPlatform {
-        includeTags 'demowebshop'
+        includeTags "Positive"
+    }
+}
+
+task negative_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "Negative"
+    }
+}
+task all_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "Web"
     }
 }
