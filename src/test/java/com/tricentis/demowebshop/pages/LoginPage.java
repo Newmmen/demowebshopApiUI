@@ -1,9 +1,13 @@
-package com.tricentis.demowebshop.tests.pages;
+package com.tricentis.demowebshop.pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.WebDriverRunner;
+import com.tricentis.demowebshop.tests.testdata.TestData;
 import io.qameta.allure.Step;
+import org.openqa.selenium.Cookie;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class LoginPage {
 

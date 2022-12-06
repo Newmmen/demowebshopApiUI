@@ -1,8 +1,8 @@
 package com.tricentis.demowebshop.tests;
 
 import com.tricentis.demowebshop.config.DataConfig;
-import com.tricentis.demowebshop.tests.pages.LoginPage;
-import com.tricentis.demowebshop.tests.pages.MainPage;
+import com.tricentis.demowebshop.pages.LoginPage;
+import com.tricentis.demowebshop.pages.MainPage;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;

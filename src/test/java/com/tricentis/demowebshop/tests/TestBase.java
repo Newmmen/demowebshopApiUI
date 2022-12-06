@@ -2,14 +2,14 @@ package com.tricentis.demowebshop.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.tricentis.demowebshop.attach.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import static com.tricentis.demowebshop.attach.WebHelper.*;
+
 public class TestBase {
-    Attach attach = new Attach();
     DesiredCapabilities capabilities = new DesiredCapabilities();
 
     @BeforeEach
@@ -29,7 +29,12 @@ public class TestBase {
 
     @AfterEach
     public void addAttachment() {
-        attach.addAttachments();
+        takeScreenShot();
+        addPageSource();
+        if (System.getProperty("selenide.remote") != null) {
+            addVideo();
+        }
+        browserConsoleLog();
     }
 
 }

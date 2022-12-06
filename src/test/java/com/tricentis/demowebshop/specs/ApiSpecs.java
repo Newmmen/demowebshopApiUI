@@ -10,17 +10,9 @@ import static com.tricentis.demowebshop.specs.CustomListener.withCustomTemplates
 import static io.restassured.RestAssured.with;
 
 public class ApiSpecs {
-    public static RequestSpecification apiAddProductRequest = with()
+    public static RequestSpecification requestSpec = with()
             .filter(withCustomTemplates())
             .baseUri("https://demowebshop.tricentis.com")
-            .basePath("/addproducttocart/catalog")
-            .log().all()
-            .contentType(ContentType.JSON);
-
-    public static RequestSpecification registerRequest = with()
-            .filter(withCustomTemplates())
-            .baseUri("https://demowebshop.tricentis.com")
-            .basePath("/register")
             .log().all()
             .contentType(ContentType.JSON);
 
@@ -31,20 +23,7 @@ public class ApiSpecs {
             .log().all()
             .contentType("application/x-www-form-urlencoded");
 
-    public static ResponseSpecification apiAddProductResponse = new ResponseSpecBuilder()
-            .expectStatusCode(200)
-            .log(LogDetail.STATUS)
-            .log(LogDetail.BODY)
-            .build();
-
-    public static ResponseSpecification registerResponse = new ResponseSpecBuilder()
-            .expectStatusCode(200)
-            .log(LogDetail.STATUS)
-            .log(LogDetail.BODY)
-            .build();
-
-    public static ResponseSpecification registerUserResponse = new ResponseSpecBuilder()
-            .expectStatusCode(302)
+    public static ResponseSpecification responseSpec = new ResponseSpecBuilder()
             .log(LogDetail.STATUS)
             .log(LogDetail.BODY)
             .build();

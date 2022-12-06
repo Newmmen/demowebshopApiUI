@@ -1,10 +1,10 @@
 package com.tricentis.demowebshop.tests;
 
 import com.tricentis.demowebshop.config.DataConfig;
-import com.tricentis.demowebshop.tests.pages.CartPage;
-import com.tricentis.demowebshop.tests.pages.ClientPage;
-import com.tricentis.demowebshop.tests.pages.LoginPage;
-import com.tricentis.demowebshop.tests.pages.MainPage;
+import com.tricentis.demowebshop.pages.*;
+import com.tricentis.demowebshop.steps.ApiSteps;
+import com.tricentis.demowebshop.steps.WebSteps;
+import com.tricentis.demowebshop.tests.testdata.TestData;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -15,36 +15,40 @@ import org.junit.jupiter.api.Test;
 public class PositiveTest extends TestBase {
     static DataConfig data = ConfigFactory.create(DataConfig.class, System.getProperties());
 
+    TestData editedUserData = new TestData();
     ClientPage clientPage = new ClientPage();
     MainPage mainPage = new MainPage();
     LoginPage loginPage = new LoginPage();
     CartPage cartPage = new CartPage();
+    UserInfoPage userPage = new UserInfoPage();
+    ApiSteps apiStep = new ApiSteps();
+    WebSteps webSteps = new WebSteps();
 
 
     @Tags({@Tag("Positive"), @Tag("Web")})
     @DisplayName("Checking new user register")
     @Test
     public void checkUserRegister() {
-        clientPage.registerUser();
-        clientPage.checklogin();
+        apiStep.registerUser();
+        webSteps.checklogin();
     }
 
     @Tags({@Tag("Positive"), @Tag("Web")})
     @DisplayName("Edit registered user data")
     @Test
     public void editUserData() {
-        clientPage.registerUser();
-        clientPage.checklogin();
-        clientPage.updateUserInfo();
+        apiStep.registerUser();
+        webSteps.checklogin();
+        userPage.updateUserInfo(editedUserData);
     }
 
     @Tags({@Tag("Positive"), @Tag("Web")})
     @DisplayName("Check add product to cart")
     @Test
     public void addProductToCart() {
-        clientPage.registerUser();
-        clientPage.checklogin();
-        clientPage.addToProductCart();
+        apiStep.registerUser();
+        webSteps.checklogin();
+        apiStep.addToProductCart();
     }
 
     @Tags({@Tag("Positive"), @Tag("Web")})
@@ -61,9 +65,9 @@ public class PositiveTest extends TestBase {
     @DisplayName("Check making order full process")
     @Test
     public void checkOrderProcess() {
-        clientPage.registerUser()
-                .checklogin()
-                .addToProductCart();
+        apiStep.registerUser();
+        webSteps.checklogin();
+        apiStep.addToProductCart();
         cartPage.makeOrder()
                 .setDeliverInfo(data.getDeliverCountry(),
                         data.getDeliverState(),
@@ -78,27 +82,27 @@ public class PositiveTest extends TestBase {
                 .checkOrder();
     }
 
-    @Tags({@Tag("Positive"), @Tag("Web")})
-    @DisplayName("Check displaying order information in my account")
-    @Test
-    public void checkOrderFromMyAccount() {
-        clientPage.registerUser()
-                .checklogin()
-                .addToProductCart();
-        cartPage.makeOrder()
-                .setDeliverInfo(data.getDeliverCountry(),
-                        data.getDeliverState(),
-                        data.getDeliverZip(),
-                        data.getDeliverAddress(),
-                        data.getDeliverPhone(),
-                        data.getDeliverCity())
-                .confirmShippingAddress()
-                .confirmPaymentMethod()
-                .confirmPaymentInformation()
-                .confirmOrder()
-                .checkOrder()
-                .checkAccountOrder();
-    }
+//    @Tags({@Tag("Positive"), @Tag("Web")})
+//    @DisplayName("Check displaying order information in my account")
+//    @Test
+//    public void checkOrderFromMyAccount() {
+//        clientPage.registerUser()
+//                .checklogin()
+//                .addToProductCart();
+//        cartPage.makeOrder()
+//                .setDeliverInfo(data.getDeliverCountry(),
+//                        data.getDeliverState(),
+//                        data.getDeliverZip(),
+//                        data.getDeliverAddress(),
+//                        data.getDeliverPhone(),
+//                        data.getDeliverCity())
+//                .confirmShippingAddress()
+//                .confirmPaymentMethod()
+//                .confirmPaymentInformation()
+//                .confirmOrder()
+//                .checkOrder()
+//                .checkAccountOrder();
+//    }
 }
 
 

@@ -36,10 +36,6 @@ public class WebHelper {
         );
     }
 
-    public void removeBanner() {
-        executeJavaScript("$('footer').remove()");
-        executeJavaScript("$('#fixedban').remove()");
-    }
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String addVideo() {
