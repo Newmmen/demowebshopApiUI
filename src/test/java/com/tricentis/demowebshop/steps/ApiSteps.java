@@ -1,6 +1,5 @@
 package com.tricentis.demowebshop.steps;
 
-import com.tricentis.demowebshop.models.PojoToken;
 import com.tricentis.demowebshop.tests.testdata.TestData;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
@@ -15,8 +14,8 @@ import static io.restassured.RestAssured.given;
 public class ApiSteps {
 
     public static Map<String,String> trueToken = new HashMap<>();
+    public static String userEmail;
     TestData userData = new TestData();
-    PojoToken userToken = new PojoToken();
     String requestVerificationTokenName = "__RequestVerificationToken";
 
 
@@ -73,21 +72,9 @@ public class ApiSteps {
             String token = cookieResponse.htmlPath().getString("**.find{it.@name == '__RequestVerificationToken'}.@value");
             Response registerNewUser = registerNewUser(userData, cookieResponse.cookies(), token);
             trueToken = registerNewUser.cookies();
+            userEmail = userData.email;
 
     }
-//    public Map<String, String> registerUser() {
-//        if (userToken.getCookies().size() == 0) {
-//            Response cookieResponse = register();
-//            String token = cookieResponse.htmlPath().getString("**.find{it.@name == '__RequestVerificationToken'}.@value");
-//
-//            Response registerNewUser = registerNewUser(userData, cookieResponse.cookies(), token);
-//            Map<String, String> cookies = registerNewUser.cookies();
-//            userToken.setCookies(cookies);
-//            return userToken.getCookies();
-//        }
-//        return userToken.getCookies();
-//    }
-
 
     @Step("Add product to cart")
     public ApiSteps addToProductCart() {

@@ -8,6 +8,7 @@ import org.openqa.selenium.Cookie;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.tricentis.demowebshop.steps.ApiSteps.trueToken;
+import static com.tricentis.demowebshop.steps.ApiSteps.userEmail;
 
 public class WebSteps  {
   ApiSteps apiSteps = new ApiSteps();
@@ -23,7 +24,7 @@ public class WebSteps  {
     @Step("Check correction of user registration")
     public WebSteps checklogin() {
         authorizeWithAddedCookie(trueToken.get("NOPCOMMERCE.AUTH"));
-        $(".account").shouldHave(Condition.text(apiSteps.userData.email));
+        $(".account").shouldHave(Condition.text(userEmail));
         return this;
     }
 
