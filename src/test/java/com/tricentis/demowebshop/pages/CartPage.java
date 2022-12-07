@@ -1,18 +1,16 @@
-package com.tricentis.demowebshop.tests.pages;
+package com.tricentis.demowebshop.pages;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
-
-import java.util.concurrent.atomic.AtomicReference;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class CartPage {
-    AtomicReference<Object> order = new AtomicReference<Object>();
 
     @Step("Make order")
     public CartPage makeOrder() {
+        $(".cart-label").click();
         $("#termsofservice").click();
         $("#checkout").click();
         return this;
@@ -68,10 +66,10 @@ public class CartPage {
 
     @Step("Check account order")
     public CartPage checkAccountOrder() {
-        order.set($(".order-completed .details li").getText());
+        String orderDetails = $(".order-completed .details li").getText();
         $(".account").click();
         $(".block-account-navigation").find(byText("Orders")).click();
-        $(".order-item .title").shouldHave(Condition.text(order.get().toString()));
+        $(".order-item .title").shouldHave(Condition.text(orderDetails));
         return this;
     }
 }

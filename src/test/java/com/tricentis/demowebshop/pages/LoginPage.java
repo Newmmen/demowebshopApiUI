@@ -1,4 +1,4 @@
-package com.tricentis.demowebshop.tests.pages;
+package com.tricentis.demowebshop.pages;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;

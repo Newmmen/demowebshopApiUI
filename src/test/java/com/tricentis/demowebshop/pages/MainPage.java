@@ -1,4 +1,4 @@
-package com.tricentis.demowebshop.tests.pages;
+package com.tricentis.demowebshop.pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
@@ -17,11 +17,4 @@ public class MainPage {
         $("[href='/login']").click();
         return this;
     }
-
-    public String getCardQty() {
-        $("[class='cart-qty']").click();
-        return $("[class='cart-qty']").getText();
-    }
-
-
 }

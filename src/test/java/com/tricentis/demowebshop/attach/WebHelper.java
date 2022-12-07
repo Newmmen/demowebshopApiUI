@@ -9,7 +9,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
@@ -36,10 +35,6 @@ public class WebHelper {
         );
     }
 
-    public void removeBanner() {
-        executeJavaScript("$('footer').remove()");
-        executeJavaScript("$('#fixedban').remove()");
-    }
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String addVideo() {
