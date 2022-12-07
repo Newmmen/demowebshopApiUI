@@ -10,11 +10,11 @@ import org.junit.jupiter.api.Test;
 public class OnlineCartTests extends TestBase {
 
     @Tags({@Tag("Positive"), @Tag("Cart")})
-    @DisplayName("Check making order full process")
+    @DisplayName("Check full process making an order")
     @Test
     public void checkOrderProcess() {
         apiStep.registerUser();
-        webSteps.checklogin();
+        webSteps.authorizeWithCookie();
         apiStep.addToProductCart();
         cartPage.makeOrder()
                 .setDeliverInfo(data.getDeliverCountry(),
@@ -35,7 +35,7 @@ public class OnlineCartTests extends TestBase {
     @Test
     public void checkOrderFromMyAccount() {
         apiStep.registerUser();
-        webSteps.checklogin();
+        webSteps.authorizeWithCookie();
         apiStep.addToProductCart();
         cartPage.makeOrder()
                 .setDeliverInfo(data.getDeliverCountry(),
@@ -57,7 +57,7 @@ public class OnlineCartTests extends TestBase {
     @Test
     public void addProductToCart() {
         apiStep.registerUser();
-        webSteps.checklogin();
+        webSteps.authorizeWithCookie();
         apiStep.addToProductCart();
     }
 

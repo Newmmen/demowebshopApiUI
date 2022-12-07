@@ -10,10 +10,10 @@ import org.junit.jupiter.api.Test;
 public class UserRegistrationTests extends TestBase {
 
     @Tags({@Tag("Positive"), @Tag("Registration")})
-    @DisplayName("Checking new user register")
+    @DisplayName("Checking new user registration")
     @Test
     public void checkUserRegister() {
         apiStep.registerUser();
-        webSteps.checklogin();
+        webSteps.authorizeWithCookie();
     }
 }

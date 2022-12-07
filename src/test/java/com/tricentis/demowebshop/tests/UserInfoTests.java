@@ -14,7 +14,7 @@ public class UserInfoTests extends TestBase {
     @Test
     public void editUserData() {
         apiStep.registerUser();
-        webSteps.checklogin();
+        webSteps.authorizeWithCookie();
         userPage.updateUserInfo(editedUserData);
     }
 }

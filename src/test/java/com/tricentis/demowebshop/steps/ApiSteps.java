@@ -13,14 +13,11 @@ import static io.restassured.RestAssured.given;
 
 public class ApiSteps {
 
-    public static Map<String,String> trueToken = new HashMap<>();
+    public static Map<String, String> trueToken = new HashMap<>();
     public static String userEmail;
     TestData userData = new TestData();
     String requestVerificationTokenName = "__RequestVerificationToken";
 
-
-
-    @Step("register new user with data and cookie")
     private Response registerNewUser(TestData userData, Map<String, String> cookies, String authToken) {
         return given()
                 .spec(registerUserRequest)
@@ -42,7 +39,7 @@ public class ApiSteps {
 
     }
 
-    @Step("Add product to cart")
+
     private void addToCartTest(Map<String, String> cookies) {
         given()
                 .spec(requestSpec)
@@ -68,11 +65,11 @@ public class ApiSteps {
     }
 
     public void registerUser() {
-            Response cookieResponse = register();
-            String token = cookieResponse.htmlPath().getString("**.find{it.@name == '__RequestVerificationToken'}.@value");
-            Response registerNewUser = registerNewUser(userData, cookieResponse.cookies(), token);
-            trueToken = registerNewUser.cookies();
-            userEmail = userData.email;
+        Response cookieResponse = register();
+        String token = cookieResponse.htmlPath().getString("**.find{it.@name == '__RequestVerificationToken'}.@value");
+        Response registerNewUser = registerNewUser(userData, cookieResponse.cookies(), token);
+        trueToken = registerNewUser.cookies();
+        userEmail = userData.email;
 
     }
 

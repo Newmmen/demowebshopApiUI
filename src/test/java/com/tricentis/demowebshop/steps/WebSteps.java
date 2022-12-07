@@ -10,28 +10,23 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.tricentis.demowebshop.steps.ApiSteps.trueToken;
 import static com.tricentis.demowebshop.steps.ApiSteps.userEmail;
 
-public class WebSteps  {
-  ApiSteps apiSteps = new ApiSteps();
+public class WebSteps {
 
-
-    private void authorizeWithAddedCookie(String authCookie) {
+    private void setCookieToWebDriver(String authCookie) {
         open("/Themes/DefaultClean/Content/images/logo.png");
         Cookie cookie = new Cookie("NOPCOMMERCE.AUTH", authCookie);
         WebDriverRunner.getWebDriver().manage().addCookie(cookie);
         open("");
 
     }
-    @Step("Check correction of user registration")
-    public WebSteps checklogin() {
-        authorizeWithAddedCookie(trueToken.get("NOPCOMMERCE.AUTH"));
+
+    @Step("Authorize with added cookie")
+    public WebSteps authorizeWithCookie() {
+        setCookieToWebDriver(trueToken.get("NOPCOMMERCE.AUTH"));
         $(".account").shouldHave(Condition.text(userEmail));
         return this;
+
     }
-
-
-
-
-
 
 
 }
